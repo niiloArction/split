@@ -20,6 +20,8 @@ declare namespace Split {
     type CSSStyleDeclarationPartial = Partial<CSSStyleDeclaration>
 
     interface Options {
+        customSnap?: (sizes: number[]) => number[]
+
         // Initial sizes of each element in percents or CSS values.
         sizes?: number[]
 

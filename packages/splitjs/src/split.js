@@ -167,6 +167,7 @@ const Split = (idsOption, options = {}) => {
     const gutterSize = getOption(options, 'gutterSize', 10)
     const gutterAlign = getOption(options, 'gutterAlign', 'center')
     const snapOffset = getOption(options, 'snapOffset', 30)
+    const customSnap = getOption(options, 'customSnap', undefined)
     const snapOffsets = Array.isArray(snapOffset) ? snapOffset : ids.map(() => snapOffset)
     const dragInterval = getOption(options, 'dragInterval', 1)
     const direction = getOption(options, 'direction', HORIZONTAL)
@@ -458,7 +459,12 @@ const Split = (idsOption, options = {}) => {
         const b = elements[self.b].element
 
         if (self.dragging) {
-            getOption(options, 'onDragEnd', NOOP)(getSizes())
+            let sizes = getSizes()
+            if (customSnap) {
+                sizes = customSnap(sizes)
+                setSizes(sizes)
+            }
+            getOption(options, 'onDragEnd', NOOP)(sizes)
         }
 
         self.dragging = false

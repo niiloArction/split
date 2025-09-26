@@ -1,5 +1,5 @@
 import React from 'react'
-import { Options } from 'split.js'
+import { Options } from 'niilokeinanen-split.js'
 
 export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrag'|'onDragStart'|'onDragEnd'> {
     sizes?: Options["sizes"]
@@ -19,6 +19,7 @@ export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
     onDragStart?: Options["onDragStart"]
     onDragEnd?: Options["onDragEnd"]
     collapsed?: Number
+    customSnap?: (sizes: number[]) => number[]
 }
 
 declare class Split extends React.Component<SplitProps, any> {}

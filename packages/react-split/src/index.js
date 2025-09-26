@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Split from 'split.js'
+import Split from 'niilokeinanen-split.js'
 
 class SplitWrapper extends React.Component {
     componentDidMount() {
@@ -41,6 +41,7 @@ class SplitWrapper extends React.Component {
             'dragInterval',
             'direction',
             'cursor',
+            'customSnap',
         ]
 
         let needsRecreate = otherProps
@@ -168,6 +169,7 @@ SplitWrapper.propTypes = {
     onDragEnd: PropTypes.func,
     collapsed: PropTypes.number,
     children: PropTypes.arrayOf(PropTypes.element),
+    customSnap: PropTypes.func,
 }
 
 SplitWrapper.defaultProps = {
@@ -189,6 +191,7 @@ SplitWrapper.defaultProps = {
     onDragEnd: undefined,
     collapsed: undefined,
     children: undefined,
+    customSnap: undefined,
 }
 
 export default SplitWrapper

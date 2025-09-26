@@ -1,5 +1,5 @@
 {
-    "name": "react-split",
+    "name": "niilokeinanen-react-split",
     "version": "2.0.14",
     "description": "React component for Split.js",
     "main": "dist/react-split.js",
@@ -22,8 +22,8 @@
     ],
     "license": "MIT",
     "dependencies": {
-        "prop-types": "^15.5.7",
-        "split.js": "^1.6.0"
+        "niilokeinanen-split.js": "^1.6.5",
+        "prop-types": "^15.5.7"
     },
     "peerDependencies": {
         "react": "*"
